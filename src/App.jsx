@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Login from './pages/Login';
-import Chat from './pages/Chat';
+import Login from './Pages/Login.jsx';
+import Chat from './Pages/Chat.jsx';
 
 // Protected Route component
 const ProtectedRoute = ({ children }) => {

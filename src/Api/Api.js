@@ -1,16 +1,15 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://shona-backend-ea93.onrender.com/api", // REST routes ka base
-  withCredentials: true,
+  baseURL: "https://shona-backend-ea93.onrender.com/api",
   headers: {
     "Content-Type": "application/json"
   }
 });
 
-// request interceptor → automatically token attach kare
+// ✅ token auto attach
 api.interceptors.request.use(config => {
-  const token = localStorage.getItem("token"); // login ke baad store hua token
+  const token = localStorage.getItem("token");
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
